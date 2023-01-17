@@ -42,9 +42,9 @@ int main()
     float lon;
     float alt;
 
-    printf("Enter the latitude of the turret : ");
+    printf("Enter the latitude of the turret in degrees: ");
     scanf("%f", &lat);
-    printf("Enter the longitude of the turret : ");
+    printf("Enter the longitude of the turret in degrees : ");
     scanf("%f", &lon);
     printf("Enter the altitude of the turret : ");
     //Altitude is the height from the planatory ellipsoid obatained from a GPS.
@@ -106,7 +106,7 @@ int main()
     float y = yt-ys;
     float z = zt-zs;
 
-    // Equation 15 and 16
+    // Equation 15 and 16 from the paper
 
 float azimuth = atan(Ap(x,y,z,pitch,yaw) /Bp(x,y,z,pitch,yaw));
 azimuth = azimuth * (180/M_PI);
