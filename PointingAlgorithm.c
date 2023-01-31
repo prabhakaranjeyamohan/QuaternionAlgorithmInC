@@ -42,11 +42,11 @@ int main()
     float lon;
     float alt;
 
-    printf("Enter the latitude of the turret in degrees: ");
+    printf("Enter the latitude of the turret in degree: ");
     scanf("%f", &lat);
-    printf("Enter the longitude of the turret in degrees : ");
+    printf("Enter the longitude of the turret in degree : ");
     scanf("%f", &lon);
-    printf("Enter the altitude of the turret : ");
+    printf("Enter the altitude of the turret in metre : ");
     //Altitude is the height from the planatory ellipsoid obatained from a GPS.
     //Please make sure the GPS uses WGS-84 model
     scanf("%f", &alt);
@@ -74,28 +74,28 @@ int main()
     float ys = (rad * C + alt) * cosLat * sin(lonRad);
     float zs = (rad * S + alt) * sinLat;
 
-    printf("%f \n", xs);
-    printf("%f \n", ys);
-    printf("%f \n", zs);
+    printf("%f \n", xs is the ECEF x co-ordinate of the ship);
+    printf("%f \n", ys is the ECEF y co-ordinate of the ship);
+    printf("%f \n", zs is the ECEF z co-ordinate of the ship);
     
 
 
     float xt, yt , zt ;
 
-    printf("X co-ordinate of drone : ");
+    printf("X co-ordinate of drone (ECEF) : ");
     scanf("%f", &xt);
-    printf("Y co-ordinate of drone : ");
+    printf("Y co-ordinate of drone (ECEF) : ");
     scanf("%f", &yt);
-    printf("Z co-ordinate of drone : ");
+    printf("Z co-ordinate of drone (ECEF) : ");
     scanf("%f", &zt);
 
 
     float pitch, roll ;
 
 
-    printf("Enter the pitch value of the ship");
+    printf("Enter the pitch value of the ship in degree : ");
     scanf("%f", &pitch);
-    printf("Enter the roll value of the ship : ");
+    printf("Enter the roll value of the ship in degree : ");
     scanf("%f", &roll);
 
     pitch = pitch * (M_PI/180.0);
@@ -114,6 +114,6 @@ azimuth = azimuth * (180/M_PI);
 float elevation = atan(Ar(x,y,z, pitch, roll,yaw)/Br(x,y,z,pitch,roll,yaw));
 elevation = elevation * (180/ M_PI);
 
-printf("%f is the required azimuth angle" , azimuth);
-printf("\n %f is the required elevation angle", elevation);
+printf("%f is the required azimuth angle in degree" , azimuth);
+printf("\n %f is the required elevation angle in degree", elevation);
 }
